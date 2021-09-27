@@ -1,0 +1,24 @@
+ALGORITHM Tri_selection
+
+VAR
+   tab : ARRAY_OF integer [20];
+   i,j,min_index,n,tmp : INTEGER;
+
+BEGIN
+
+   n := tab.length;
+   
+   FOR i FROM 0 TO n-2 STEP 1  DO
+       min_index := i;
+       FOR j  FROM i  TO n-i-2 STEP 1  DO
+           IF (tab[j]<tab[min_index]) THEN
+               min_index := j;
+           END_IF
+       END_FOR
+   
+   tmp:=tab[min_index];
+   tab[min_index]:=tab[i];
+   tab[i]):=tmp;
+   
+   END_FOR
+END
